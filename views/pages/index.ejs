@@ -22,11 +22,11 @@
  
             <div class="row">
                 <div class="col-md-10 col-md-offset-1 subscribe">
-                    <form class="form-inline" role="form" action="subscribe.php" id="subscribeForm" method="POST">
+                    <form class="form-inline" role="form" id="subscribeForm" method="POST" onsubmit="" action="/request_trip">
                         <div class="form-group-lg">
                             <div class="col-md-3">
-                                <label class="trip-label" for="travelers">Travelers</label>
-                                <select class="form-control">
+                                <label for="travelers" class="trip-label" for="travelers">Travelers</label>
+                                <select id="travelers" class="form-control" name="travelers">
                                     <option>1</option>
                                     <option>2</option>
                                     <option>3</option>
@@ -42,13 +42,13 @@
                             </div>
                             
                             <div class="col-md-4">
-                                <label class="trip-label" for="departure">From</label>
-                                <input class="form-control" placeholder="Departure City">
+                                <label for="departure" class="trip-label" for="departure">From</label>
+                                <input id="departure" class="form-control" name="departure" placeholder="Departure City">
                             </div>
                             
                             <div class="col-md-3">
-                                <label class="trip-label" for="budget">$</label>
-                                <select class="form-control" placeholder="Budget">
+                                <label for="price" class="trip-label" for="budget">$</label>
+                                <select id="price" class="form-control" placeholder="Budget" name="price">
                                     <option>Under $500</option>
                                     <option>Under $700</option>
                                     <option>Under $1,000</option>
@@ -60,7 +60,7 @@
                                 <button type="submit" class="btn btn-success btn-lg">Let's go!</button>
                             </div>
                             <div class="col-md-6 col-md-offset-3">
-                                <input class="form-control travel-email" name="email" type="email" id="address" placeholder="Enter your email" data-validate="validate(required, email)" required="required">
+                                <input class="form-control travel-email" name="email" type="email" id="address" placeholder="Enter your email" data-validate="validate(required, email)">
                             </div>
                         </div>
                     </form>
@@ -136,19 +136,6 @@
             </div><! --/col-sm-6-->
         </section><! --/section -->
  
-
-        <! -- ******************** CLIENTS SECTION ******************** -->  
-        <div class="section-title">
-            <h2>Some of our clients</h2>
-            <h4>We work with different kind of brands</h4>
-        </div>
-    
-        <section class="row clientlogo breath">
-            <div class="col-md-12 text-center"> 
-                <img src="images/client-logos.png" alt="client-logos">
-            </div>
-        </section><! --/section -->
- 
     </div><! --/container -->
  
 
@@ -191,7 +178,7 @@
  
             <div class="section-title">
                 <h2>Honest pricing. No surprises.</h2>
-                <h4>No contract. No risk. No credit card required. </h4>
+                <h4>No blood-pact. No credit card required. </h4>
             </div>
             <section class="row breath planpricing">
             
@@ -270,11 +257,47 @@
  
  
  
-<script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src="js/easing.js"></script>
 <script src="js/nicescroll.js"></script>
  
+ <script type="text/javascript">
+     function validateEmail(email) {
+         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+         return re.test(email);
+     }
+     function postContactToGoogle(){
+         var travelers = $('#travelers').val();
+         var departure = $('#departure').val();
+         var price = $('#price').val();
+         if ((travelers !== "") && (departure !== "") && ((price !== ""))) {
+             $.ajax({
+                 url: "/request_trip",
+                 data: {"entry.1" : travelers, "entry.3" : departure, "entry.4": price},
+                 type: "POST",
+                 dataType: "xml",
+                 statusCode: {
+                     0: function (){
+  
+                         $('#travelers').val("");
+                         $('#departure').val("");
+                         $('#price').val("");
+                         //Success message
+                     },
+                     200: function (){
+                         $('#travelers').val("");
+                         $('#departure').val("");
+                         $('#price').val("");
+                         //Success Message
+                     }
+                 }
+             });
+         }
+         else {
+             //Error message
+         }
+     }
+ </script>
  
 <script>
 
