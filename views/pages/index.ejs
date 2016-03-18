@@ -3,7 +3,6 @@
 <head>
   <% include ../partials/header.ejs %>
 
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -24,7 +23,7 @@
                 <div class="col-md-10 col-md-offset-1 subscribe">
                     <form class="form-inline" role="form" id="subscribeForm" method="POST" onsubmit="" action="/request_trip">
                         <div class="form-group-lg">
-                            <div class="col-md-3">
+                            <div class="col-sm-3">
                                 <label for="travelers" class="trip-label">Travelers</label>
                                 <select id="travelers" class="form-control" name="travelers">
                                     <option value="1">1</option>
@@ -41,12 +40,12 @@
                                 </select>
                             </div>
                             
-                            <div class="col-md-4">
+                            <div class="col-sm-4">
                                 <label for="departure" class="trip-label">From</label>
-                                <input id="departure" class="form-control" name="departure" placeholder="Departure City">
+                                <input id="departure" class="form-control trip-entries" name="departure" placeholder="Departure City">
                             </div>
                             
-                            <div class="col-md-3">
+                            <div class="col-sm-3">
                                 <label for="price" class="trip-label" for="budget">$</label>
                                 <select id="price" class="form-control" name="price">
                                     <option value="500">Under $500</option>

@@ -68,6 +68,7 @@ app.post('/request_trip', function(req, res) {
 
         console.log('inserted ', data);
         
+        res.render('pages/congrats');
     });
 });
 
