@@ -1,16 +1,28 @@
 var cool = require('cool-ascii-faces');
 var express = require('express');
-var httpProxy = require('http-proxy');
+var bodyParser = require('body-parser');
 var pg = require('pg');
 
 var app = express();
-app.set('port', (process.env.PORT || 5000));
+var conString = 'postgres://gbpfdujmzodkik:RcoNblyAq5nuMAKFP81IWyALF-@ec2-54-225-151-64.compute-1.amazonaws.com:5432/dasp62midgd3k5';
 
-app.use(express.static(__dirname + '/public'));
+app.set('port', (process.env.PORT || 5000));
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
+
+app.use(express.static(__dirname + '/public'));
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
 
 app.get('/db', function (request, response) {
 	    pg.connect(process.env.DATABASE_URL, function(err, client, done) {
@@ -27,41 +39,38 @@ app.get('/db', function (request, response) {
 
 app.get('/', function(request, response) {
   response.render('pages/index');
-  require('bootstrap');
 });
 
 app.get('/cool', function(request, response) {
 	response.send(cool());
+});
+
+app.post('/request_trip', function(req, res) {
+	var results = [];
+	console.log(req.body);
+    // Grab data from http request
+    var data = {travelers: req.body.travelers, departure: req.body.departure, price: req.body.price, email : ''};
+    console.log(req.body.travelers);
+    console.log(req.body.price);
+    console.log(data.email);
+    pg.defaults.ssl = true;
+    // Get a Postgres client from the connection pool
+    pg.connect(conString, function(err, client, done) {
+        // Handle connection errors
+        if(err) {
+          done();
+          console.log(err);
+          return res.status(500).json({ success: false, data: err});
+        }
+
+        // SQL Query > Insert Data
+        client.query("INSERT INTO submissions(travelers, departure, price, email) values($1, $2, $3, $4)", [data.travelers, data.departure, data.price, data.email]);
+
+        console.log('inserted ', data);
+        
     });
-
-app.post('/request_trip', function(request, response) {
-	var travelers = request.travelers;
-	var departure = request.departure;
-	var price = request.price;
-	
-	var proxyOptions = {
-	    changeOrigin: true
-	};
-
-	httpProxy.prototype.onError = function (err) {
-	    console.log(err);
-	};
-
-	var apiProxy = httpProxy.createProxyServer(proxyOptions);
-	var apiForwardingUrl = 'https://docs.google.com/forms/d/1mbnp8aHHb19SQdb4kIl2cCLTHXrNIAzA_tyGELW961U/formResponse';
-	
-	console.log('got through vars with apiURL ' + apiForwardingUrl);
-	if ((travelers !== "") && (departure !== "") && ((price !== ""))) {
-		apiProxy.web(request, response, {target: apiForwardingUrl});
-	}
-	else {
-	    //Error message
-	}
 });
 
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
 
 
 

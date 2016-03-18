@@ -25,43 +25,43 @@
                     <form class="form-inline" role="form" id="subscribeForm" method="POST" onsubmit="" action="/request_trip">
                         <div class="form-group-lg">
                             <div class="col-md-3">
-                                <label for="travelers" class="trip-label" for="travelers">Travelers</label>
+                                <label for="travelers" class="trip-label">Travelers</label>
                                 <select id="travelers" class="form-control" name="travelers">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                    <option>9</option>
-                                    <option>10</option>
-                                    <option>Army</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="Lots">Army</option>
                                 </select>
                             </div>
                             
                             <div class="col-md-4">
-                                <label for="departure" class="trip-label" for="departure">From</label>
+                                <label for="departure" class="trip-label">From</label>
                                 <input id="departure" class="form-control" name="departure" placeholder="Departure City">
                             </div>
                             
                             <div class="col-md-3">
                                 <label for="price" class="trip-label" for="budget">$</label>
-                                <select id="price" class="form-control" placeholder="Budget" name="price">
-                                    <option>Under $500</option>
-                                    <option>Under $700</option>
-                                    <option>Under $1,000</option>
-                                    <option>Under $1,500</option>
-                                    <option>Ball out</option>
+                                <select id="price" class="form-control" name="price">
+                                    <option value="500">Under $500</option>
+                                    <option value="700">Under $700</option>
+                                    <option value="1000">Under $1,000</option>
+                                    <option value="1500">Under $1,500</option>
+                                    <option value="Lots">Ball out</option>
                                 </select>
                             </div>
                             <div class="col-md-2">
                                 <button type="submit" class="btn btn-success btn-lg">Let's go!</button>
                             </div>
-                            <div class="col-md-6 col-md-offset-3">
+                            <!--<div class="col-md-6 col-md-offset-3">
                                 <input class="form-control travel-email" name="email" type="email" id="address" placeholder="Enter your email" data-validate="validate(required, email)">
-                            </div>
+                            </div>-->
                         </div>
                     </form>
                     <span id="result" class="alertMsg"></span> </div>
@@ -256,48 +256,10 @@
  
  
  
- 
-<script src="js/bootstrap.js"></script>
+<script src="js/jquery.js"></script>
 <script src="js/easing.js"></script>
 <script src="js/nicescroll.js"></script>
- 
- <script type="text/javascript">
-     function validateEmail(email) {
-         var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-         return re.test(email);
-     }
-     function postContactToGoogle(){
-         var travelers = $('#travelers').val();
-         var departure = $('#departure').val();
-         var price = $('#price').val();
-         if ((travelers !== "") && (departure !== "") && ((price !== ""))) {
-             $.ajax({
-                 url: "/request_trip",
-                 data: {"entry.1" : travelers, "entry.3" : departure, "entry.4": price},
-                 type: "POST",
-                 dataType: "xml",
-                 statusCode: {
-                     0: function (){
-  
-                         $('#travelers').val("");
-                         $('#departure').val("");
-                         $('#price').val("");
-                         //Success message
-                     },
-                     200: function (){
-                         $('#travelers').val("");
-                         $('#departure').val("");
-                         $('#price').val("");
-                         //Success Message
-                     }
-                 }
-             });
-         }
-         else {
-             //Error message
-         }
-     }
- </script>
+<script src="js/bootstrap.js"></script>
  
 <script>
 
