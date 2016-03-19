@@ -2,10 +2,16 @@ var cool = require('cool-ascii-faces');
 var express = require('express');
 var bodyParser = require('body-parser');
 var pg = require('pg');
-
 var app = express();
 var conString = 'postgres://gbpfdujmzodkik:RcoNblyAq5nuMAKFP81IWyALF-@ec2-54-225-151-64.compute-1.amazonaws.com:5432/dasp62midgd3k5';
-
+var nodemailer = require("nodemailer");
+var smtpTransport = nodemailer.createTransport("SMTP",{
+   service: "Gmail",
+   auth: {
+       user: "fun-instigator@justpack.co",
+       pass: "73%BjLL>"
+   }
+});
 app.set('port', (process.env.PORT || 5000));
 
 // views is directory for all template files
@@ -49,10 +55,7 @@ app.post('/request_trip', function(req, res) {
 	var results = [];
 	console.log(req.body);
     // Grab data from http request
-    var data = {travelers: req.body.travelers, departure: req.body.departure, price: req.body.price, email : ''};
-    console.log(req.body.travelers);
-    console.log(req.body.price);
-    console.log(data.email);
+    var data = {travelers: req.body.travelers, departure: req.body.departure, price: req.body.price, email : req.body.email};
     pg.defaults.ssl = true;
     // Get a Postgres client from the connection pool
     pg.connect(conString, function(err, client, done) {
@@ -62,16 +65,22 @@ app.post('/request_trip', function(req, res) {
           console.log(err);
           return res.status(500).json({ success: false, data: err});
         }
-
         // SQL Query > Insert Data
         client.query("INSERT INTO submissions(travelers, departure, price, email) values($1, $2, $3, $4)", [data.travelers, data.departure, data.price, data.email]);
-
         console.log('inserted ', data);
-        
+        smtpTransport.sendMail({
+           from: "Travel Buddy <fun-instigator@justpack.co>", // sender address
+           to: "Boss <ajcihla@gmail.com>", // comma separated list of receivers
+           subject: "Bro, New Trip Request", // Subject line
+           text: "Check it out " + JSON.stringify(data) // plaintext body
+        }, function(error, response){
+           if(error){
+               console.log(error);
+           }else{
+               console.log("Message sent: " + response.message);
+           }
+        });
         res.render('pages/congrats');
     });
 });
-
-
-
 

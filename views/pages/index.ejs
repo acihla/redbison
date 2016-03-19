@@ -14,62 +14,75 @@
     <! -- ******************** MASTHEAD SECTION ******************** -->    
     <main id="top" class="masthead" role="main">
         <div class="container">
-            <div class="logo"> <a href="index.html#"><img src="images/justpackwhitemedium.png" alt="logo"></a>
+            <div class="logo"> <a href="#"><img src="images/justpackwhitemedium.png" alt="logo"></a>
             </div>
- 
-            <h1>Travel is <strong>good</strong>. Stress is <strong>bad</strong></h1>
- 
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1 subscribe">
-                    <form class="form-inline" role="form" id="subscribeForm" method="POST" onsubmit="" action="/request_trip">
-                        <div class="form-group-lg">
-                            <div class="col-sm-3">
-                                <label for="travelers" class="trip-label">Travelers</label>
-                                <select id="travelers" class="form-control" name="travelers">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                    <option value="Lots">Army</option>
-                                </select>
-                            </div>
-                            
-                            <div class="col-sm-4">
-                                <label for="departure" class="trip-label">From</label>
-                                <input id="departure" class="form-control trip-entries" name="departure" placeholder="Departure City">
-                            </div>
-                            
-                            <div class="col-sm-3">
-                                <label for="price" class="trip-label" for="budget">$</label>
-                                <select id="price" class="form-control" name="price">
-                                    <option value="500">Under $500</option>
-                                    <option value="700">Under $700</option>
-                                    <option value="1000">Under $1,000</option>
-                                    <option value="1500">Under $1,500</option>
-                                    <option value="Lots">Ball out</option>
-                                </select>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="submit" class="btn btn-success btn-lg">Let's go!</button>
-                            </div>
-                            <!--<div class="col-md-6 col-md-offset-3">
-                                <input class="form-control travel-email" name="email" type="email" id="address" placeholder="Enter your email" data-validate="validate(required, email)">
-                            </div>-->
-                        </div>
-                    </form>
-                    <span id="result" class="alertMsg"></span> </div>
+            
+            <h1>Travel is <strong>good</strong>. Stress is <strong>bad</strong>.</h1>
+            
+            
+            <div id="blanket" style="display:none" onclick="popup('popUpDiv')"></div>
+            <form class="form-inline trip-query" role="form" id="subscribeForm" method="POST" action="/request_trip">
+                <div class="row form-group-lg">
+                    <!--<div class="col-sm-3 col-sm-offset-1">
+                        <label for="travelers" class="trip-label">Guests</label>
+                        <select id="travelers" class="form-control" name="travelers">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="Army">Army</option>
+                        </select>
+                    </div> -->
+                    
+                    <div class="col-sm-2 col-sm-offset-3">
+                        <label for="departure" class="trip-label"><b>From</b></label>
+                        <input id="departure" class="form-control" name="departure" placeholder="Departure City" required>
+                    </div>
+                    <!--<div class="col-sm-1">
+                        <h2>+</h2>
+                    </div>-->
+                    <div class="col-sm-2">
+                        <label for="price" class="trip-label" for="price">$$$</label>
+                        <select id="price" class="form-control" name="price">
+                            <option value="500">Under $500</option>
+                            <option value="700">Under $700</option>
+                            <option value="1000">Under $1,000</option>
+                            <option value="1500">Under $1,500</option>
+                            <option value="Lots">Ball out</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2">
+                        <label class="trip-label" for="getgoing">&#9992;...&#9992;...&#9992;</label>
+                        <button class="btn btn-success btn-lg form-control" type="button" onclick="popup('popUpDiv')">Get going...</button>
+                    </div>
                 </div>
+                <!--<div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <button class="btn btn-success btn-lg submit-query" type="button" onclick="popup('popUpDiv')">Get going...</button>
+                    </div>
+                </div>-->
+                <div class="row" id="popUpDiv" style="display:none">
+                    <div class="form-group-lg">
+                        <div class="col-sm-6 col-sm-offset-2">
+                            <input id="email" class="email-input input-lg col-sm-12" name="email" type="email" placeholder="We'll email you a handcrafted plan. No spam. Promise." required>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="submit" class="btn btn-success btn-lg">Vacay</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
  
-                <a href="index.html#explore" class="scrollto">
-                <p>SCROLL DOWN TO EXPLORE</p>
-                <p class="scrollto--arrow"><img src="images/scroll_down.png" alt="scroll down arrow"></p>
-                </a>
+            <a href="index.html#explore" class="scrollto">
+            <p>SCROLL DOWN TO EXPLORE</p>
+            <p class="scrollto--arrow"><img src="images/scroll_down.png" alt="scroll down arrow"></p>
+            </a>
         </div><! --/container -->
     </main><! --/main -->
  
@@ -262,6 +275,55 @@
  
 <script>
 
+function toggle(div_id) {
+    var el = document.getElementById(div_id);
+    if ( el.style.display == 'none' ) { el.style.display = 'block';}
+    else {el.style.display = 'none';}
+}
+function blanket_size(popUpDivVar) {
+    if (typeof window.innerWidth != 'undefined') {
+        viewportheight = window.innerHeight;
+    } else {
+        viewportheight = document.documentElement.clientHeight;
+    }
+    if ((viewportheight > document.body.parentNode.scrollHeight) && (viewportheight > document.body.parentNode.clientHeight)) {
+        blanket_height = viewportheight;
+    } else {
+        if (document.body.parentNode.clientHeight > document.body.parentNode.scrollHeight) {
+            blanket_height = document.body.parentNode.clientHeight;
+        } else {
+            blanket_height = document.body.parentNode.scrollHeight;
+        }
+    }
+    var blanket = document.getElementById('blanket');
+    blanket.style.height = blanket_height + 'px';
+    var popUpDiv = document.getElementById(popUpDivVar);
+}
+function window_pos(popUpDivVar) {
+    if (typeof window.innerWidth != 'undefined') {
+        viewportwidth = window.innerHeight;
+    } else {
+        viewportwidth = document.documentElement.clientHeight;
+    }
+    if ((viewportwidth > document.body.parentNode.scrollWidth) && (viewportwidth > document.body.parentNode.clientWidth)) {
+        window_width = viewportwidth;
+    } else {
+        if (document.body.parentNode.clientWidth > document.body.parentNode.scrollWidth) {
+            window_width = document.body.parentNode.clientWidth;
+        } else {
+            window_width = document.body.parentNode.scrollWidth;
+        }
+    }
+    var popUpDiv = document.getElementById(popUpDivVar);
+    //window_width=window_width/2-200;//200 is half popup's width
+    //popUpDiv.style.left = window_width + 'px';
+}
+function popup(windowname) {
+    blanket_size(windowname);
+    //window_pos(windowname);
+    toggle('blanket');
+    toggle(windowname);     
+}
 
  $(function() {
     $('.scrollto, .gototop').bind('click',function(event){
@@ -272,7 +334,6 @@
      event.preventDefault();
       });
   });
-        
 
 </script>
 </body>

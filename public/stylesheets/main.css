@@ -88,20 +88,25 @@ a:hover,a:focus{color:#5173bd;}
   
 .pace.pace-inactive{display:none;}
 
-.btn,.btn-lg,.input-lg{border-radius:3px;}
-
-.form-control{
-  border-radius:3px;
-  -webkit-box-shadow:none;
-  box-shadow:none;border:0;
-  }
+.btn,.btn-lg,.input-lg{
+  border-radius:0;
+}
   
-.input-lg{height:55px;}
+.input-lg{
+  height:50px;
+}
 
 .btn-lg,.btn-group-lg>.btn{
-  padding:10px 28px;
-  height:52px;
+  padding:10px 22px;
+  height:50px;
+  vertical-align: bottom;
   }
+.btn-center {
+  min-height: 80px;
+  height:100%;
+  float: bottom;
+  display: table-cell;
+}
 .breath{margin:50px auto;}
 
 .highlight{background:#f4f4f4;margin-top:40px;}
@@ -191,25 +196,32 @@ to {
   padding: 45px 0;
   text-align:center;
 }
+.logo a img {
+  max-width: 100%;
+  height: auto;
+}
 .btn-large {
   font-size:18px;
-  padding:20px 50px;
+  padding:15px 35px;
   margin:5px 10px;
 }
-.btn-success {
+button.btn-success {
   background-color: #2ecc71;
   background-image:none;
   border: 0;
+  font-size:22px;
   /*-webkit-box-shadow: 0 3px 0 rgba(2, 154, 67, 1);
   box-shadow: 0 3px 0 rgba(2, 154, 67, 1);*/
-  line-height: 1.8;
+  box-shadow: none;
+  height: 100%;
 }
 .btn-success:hover, .btn-success:focus, .btn-success:active {
   background-color: #29c36a;
   color:#FFF;
   border: 0;
-  /*-webkit-box-shadow: 0 3px 0 rgba(2, 139, 61, 1);
-  box-shadow: 0 3px 0 rgba(2, 139, 61, 1);*/
+  box-shadow: none;
+  /*margin-bottom: -3px;
+  margin-top: 3px;*/
 }
 .btn-primary {
   background-color: #2db6d8;
@@ -220,8 +232,10 @@ to {
   background-color: #209ab8!important;
   color:#FFF!important;
 }
-.subscribe {
-  padding: 45px 0;
+.row-align{
+  display: table-cell;
+  vertical-align: bottom;
+  float: left;
 }
 .alertMsg {
   float: left;
@@ -229,10 +243,28 @@ to {
   display: block;
   padding: 5px 17px;
 }
-.travel-email {
-  visibility: hidden;
+
+#blanket {
+background-color:#fff;
+opacity: 0.95;
+*background:none;
+position:absolute;
+z-index: 9001;
+top:0px;
+left:0px;
+width:100%;
+-webkit-transition: all 1s ease-in-out;
+-moz-transition: all 1s ease-in-out;
+-o-transition: all 1s ease-in-out:
+transition: all 1s ease-in-out;
 }
 
+#popUpDiv {
+position:relative;
+width: 100%;
+padding-top: 50px;
+z-index: 9002;
+}
 /* Boucing Arrow Animation */
 
 @keyframes arrowbounce {
@@ -516,6 +548,7 @@ to {
  h1 {
 font-size: 30px;
 line-height: 50px;
+padding-top: -30px;
 margin: 15px 0;
 }
  h2 {
@@ -552,13 +585,19 @@ padding: 40px 15px;
    .masthead {
   background-attachment: scroll;
 }
-
 }
-
-.trip-label {
-  padding-right: 20px;
+label.trip-label {
+  text-align: left;
   font-size: 18px;
 }
-.travel-query {
-  left: 50%;
+.trip-query {
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+.trip-input {
+  min-height: 100px;
+}
+.email-input {
+  font-family:'Open Sans',Arial,sans-serif;
+  color:#94a3a8;
 }
