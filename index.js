@@ -51,6 +51,25 @@ app.get('/cool', function(request, response) {
 	response.send(cool());
 });
 
+app.post('/trip_notes', function(req, res) {
+	var results = [];
+	console.log(req.body);
+	var data = req.body;
+    smtpTransport.sendMail({
+       from: "Travel Buddy <fun-instigator@justpack.co>", // sender address
+       to: "Boss <ajcihla@gmail.com>", // comma separated list of receivers
+       subject: "Bro, New Trip NOTES", // Subject line
+       text: "Check it out " + JSON.stringify(data) // plaintext body
+    }, function(error, response){
+       if(error){
+           console.log(error);
+       }else{
+           console.log("Message sent: " + response.message);
+       }
+    });
+    res.render('pages/index');
+});
+
 app.post('/request_trip', function(req, res) {
 	var results = [];
 	console.log(req.body);

@@ -100,6 +100,7 @@ a:hover,a:focus{color:#5173bd;}
   padding:10px 22px;
   height:50px;
   vertical-align: bottom;
+  box-shadow: none;
   }
 .btn-center {
   min-height: 80px;
@@ -246,7 +247,7 @@ button.btn-success {
 
 #blanket {
 background-color:#fff;
-opacity: 0.95;
+opacity: 0.75;
 *background:none;
 position:absolute;
 z-index: 9001;
@@ -262,7 +263,7 @@ transition: all 1s ease-in-out;
 #popUpDiv {
 position:relative;
 width: 100%;
-padding-top: 50px;
+padding-top: 10px;
 z-index: 9002;
 }
 /* Boucing Arrow Animation */
@@ -518,7 +519,7 @@ to {
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
   background-color: #6883cc;
-  background-image:url("../images/header.png");
+  background-image:url("../images/airport.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -526,6 +527,7 @@ to {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  box-shadow: none;
 }
 .footerlinks {
   text-align:center;
@@ -537,7 +539,25 @@ to {
   padding-bottom: 15px;
 }
 
+/*==========9. CONGRATS PAGE ==============*/
 
+.congrats-form {
+  height: 900px;
+  padding: 60px 15px;
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+  background-color: #6883cc;
+  background-image:url("../images/feetTravel.png");
+  background-repeat: no-repeat;
+  background-position: 25% 95%;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-shadow: none;
+}
 
 /*==========9. CUSTOM MEDIA QUERIES==============*/
 
@@ -586,6 +606,7 @@ padding: 40px 15px;
   background-attachment: scroll;
 }
 }
+
 label.trip-label {
   text-align: left;
   font-size: 18px;
@@ -593,6 +614,10 @@ label.trip-label {
 .trip-query {
   margin-top: 30px;
   margin-bottom: 50px;
+}
+.trip-notes {
+  margin-top: 90px;
+  margin-bottom: 20px;
 }
 .trip-input {
   min-height: 100px;

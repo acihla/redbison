@@ -8,19 +8,37 @@
 
 <body>
 	<! -- ******************** FEATURES SECTION ******************** -->    
-	<div class="container" id="explore">
-	
-	    <div class="section-title">
-	        <h2>Congrats!</h2>
-	        <h4>We'll reach out within 24hrs with a 3-day trip that will change your life.</h4>
+	<main class="congrats-form" role="main">
+	    <div class="container" >
+        	<h1>Congrats!</h1>
+        	<h1>We'll reach out within 24hrs</h1>
+        	<h3>...with a 3-day trip that will change your life.</h3>
+        	
+        	<div class="trip-notes">
+	            <div class="col-sm-8 col-sm-offset-2">
+	        		<h3>Control Freak? Have any more details you want to share?</h3>
+		    		<p></p>
+	        	</div>
+		        <div class="col-md-12 text-center"> 
+		       		<form class="form-inline trip-query" role="form" method="POST" action="/trip_notes">
+		        		<div class="row">
+		                    <div class="form-group-lg">
+		                        <div class="col-sm-6 col-sm-offset-2">
+		                            <label class="trip-label" for="notes" style="display:none">No Spam.</label>
+		                            <input id="notes" class="email-input input-lg col-sm-12" name="notes" placeholder="We'll happily do our best to include it in the plan." required>
+		                        </div>
+		                        <div class="col-sm-2">
+		                            <label class="trip-label" for="email" style="display:none">&#9997;</label>
+		                            <button type="submit" class="btn btn-success btn-lg">Noted!</button>
+		                        </div>
+		                    </div>
+		                </div>
+	            	</form>
+		        </div>
+		    </div>
 	    </div>
-
-	    <section class="row heroimg breath">
-	        <div class="col-md-12 text-center"> 
-	            <img src="images/flat-mockup-template.png" alt="flat-mockup-template">
-	        </div>
-	    </section><! --/section -->
-	
+	</main>
+	<div class="container">
 	    <div class="section-title">
 	        <h2>Seriously, Justpack.</h2>
 	        <h4>Deets about what we do.</h4>
@@ -36,7 +54,7 @@
 	                </div>
 	            </div><! --/thumbnail -->
 	        </div><! --/col-sm-6-->
-	
+
 	        <div class="col-sm-6 col-md-3">
 	            <div class="thumbnail"> 
 	                <img src="images/service_02.png" alt="analytics-icon">
@@ -46,7 +64,7 @@
 	                </div>
 	            </div><! --/thumbnail -->
 	        </div><! --/col-sm-6-->
-	
+
 	        <div class="col-sm-6 col-md-3">
 	            <div class="thumbnail"> 
 	                <img src="images/service_03.png" alt="analytics-icon">
@@ -56,7 +74,7 @@
 	                </div>
 	            </div><! --/thumbnail -->
 	        </div><! --/col-sm-6-->
-	
+
 	        <div class="col-sm-6 col-md-3">
 	            <div class="thumbnail"> 
 	                <img src="images/service_04.png" alt="analytics-icon">
@@ -67,6 +85,5 @@
 	            </div><! --/thumbnail -->
 	        </div><! --/col-sm-6-->
 	    </section><! --/section -->
-	
 	</div><! --/container -->
 </body>

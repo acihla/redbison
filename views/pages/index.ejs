@@ -59,7 +59,7 @@
                     </div>
                     <div class="col-sm-2">
                         <label class="trip-label" for="getgoing">&#9992;...&#9992;...&#9992;</label>
-                        <button class="btn btn-success btn-lg form-control" type="button" onclick="popup('popUpDiv')">Get going...</button>
+                        <button class="btn btn-success btn-lg form-control" type="button" onclick="popup('popUpDiv')">Get going</button>
                     </div>
                 </div>
                 <!--<div class="row">
@@ -70,10 +70,12 @@
                 <div class="row" id="popUpDiv" style="display:none">
                     <div class="form-group-lg">
                         <div class="col-sm-6 col-sm-offset-2">
-                            <input id="email" class="email-input input-lg col-sm-12" name="email" type="email" placeholder="We'll email you a handcrafted plan. No spam. Promise." required>
+                            <label class="trip-label" for="email" style="display:none">No Spam.</label>
+                            <input id="email" class="email-input input-lg col-sm-12" name="email" type="email" placeholder="Get a handcrafted plan. No spam. We promise." required>
                         </div>
                         <div class="col-sm-2">
-                            <button type="submit" class="btn btn-success btn-lg">Vacay</button>
+                            <label class="trip-label" for="email" style="display:none">&#9997;</label>
+                            <button type="submit" class="btn btn-success btn-lg">Give me vacay</button>
                         </div>
                     </div>
                 </div>
@@ -90,16 +92,16 @@
     <! -- ******************** FEATURES SECTION ******************** -->    
     <div class="container" id="explore">
  
-        <div class="section-title">
+        <!--<div class="section-title">
             <h2>Share with friends to win a free trip!</h2>
-            <h4>...because who doesn't want to be tempted.</h4>
+            <h4>...because who doesn't want to see more in life.</h4>
         </div>
 
         <section class="row heroimg breath">
             <div class="col-md-12 text-center"> 
                 <img src="images/flat-mockup-template.png" alt="flat-mockup-template">
             </div>
-        </section><! --/section -->
+        </section>--><! --/section -->
  
         <div class="section-title">
             <h2>Seriously, Justpack.</h2>
@@ -122,7 +124,7 @@
                     <img src="images/service_02.png" alt="analytics-icon">
                     <div class="caption">
                         <h3>Fully budgeted.</h3>
-                        <p>We take into account everything from airfare to dinner fare in our selection.</p>
+                        <p>We account for everything from airfare to dinner fare in our selection.</p>
                     </div>
                 </div><! --/thumbnail -->
             </div><! --/col-sm-6-->
@@ -155,27 +157,27 @@
         <div class="highlight testimonials">
             <div class="container">
                 <div class="section-title">
-                    <h2>What our customers said</h2>
-                    <h4>Don't take our word. See our testimonials </h4>
+                    <h2>Why would anyone use Justpack?</h2>
+                    <h4>Listen to these people. </h4>
                 </div>
                 
                 <section class="row breath">
                     <div class="col-md-6">
-                        <div class="testblock">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </div>
+                        <div class="testblock">I'm prone to overtly aggressive outbursts when stuck in the office for too long. I've also realized an alarming spike in hairloss whenever tasked with planning a trip with friends. I use Justpack so that I don't die an early, stress-induced death.</div>
                         <div class="clientblock"> 
                             <img src="images/customer-img-1.jpg" alt=".">
-                            <p><strong>John Doe</strong> <br>
-                                Founder of <a href="index.html#">Blacktie.co</a>
+                            <p><strong>Augustus Maywho</strong> <br>
+                                Someone similar to a person you know.
                             </p>
                         </div>
                     </div><! --/col-md-6 -->
                     
                     <div class="col-md-6">
-                        <div class="testblock">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </div>
+                        <div class="testblock">I've realized that living in a bubble, of my own creation, is not how I want to live my life. Life fulfillment comes from a spectrum of experiences. A spectrum that one simply cannot find from yet another Netflix binge. </div>
                         <div class="clientblock"> 
                             <img src="images/customer-img-2.jpg" alt=".">
-                            <p><strong>Richard Sommer</strong> <br>
-                                CEO of <a href="index.html#">Blacktie.co</a>
+                            <p><strong>Cindy Lou Who </strong> <br>
+                                Seriously. Is this NOT true?
                             </p>
                         </div>
                     </div><! --/col-md-6 -->
@@ -196,25 +198,25 @@
             
                 <div class="col-md-4">
                     <div class="pricing color1">
-                        <div class="planname">Personal</div>
-                        <div class="price"> <span class="curr">$</span>14<span class="per">/MO</span></div>
-                        <div class="billing">Billed Annually</div>
+                        <div class="planname">Individual</div>
+                        <div class="price"> <span class="curr">$</span>25<span class="per"></span></div>
+                        <div class="billing">Billed @ booking</div>
                     </div><! --/pricing -->
                 </div><! --/col-md-4-->
                 
                 <div class="col-md-4">
                     <div class="pricing color2">
-                        <div class="planname">Agency</div>
-                        <div class="price"> <span class="curr">$</span>49<span class="per">/MO</span></div>
-                        <div class="billing">Billed Annually</div>
+                        <div class="planname">Group</div>
+                        <div class="price"> <span class="curr">$</span>20<span class="per">/guest</span></div>
+                        <div class="billing">Billed @ booking</div>
                     </div><! --/pricing -->
                 </div><! --/col-md-4-->
                 
                 <div class="col-md-4">
                     <div class="pricing color3">
-                        <div class="planname">Enterprise</div>
-                        <div class="price"> <span class="curr">$</span>99<span class="per">/MO</span></div>
-                        <div class="billing">Billed Annually</div>
+                        <div class="planname">Subscription</div>
+                        <div class="price"> <span class="curr">$</span>15<span class="per">/MO</span></div>
+                        <div class="billing">Billed Monthly</div>
                     </div><! --/pricing -->
                 </div><! --/col-md-4-->
             </section><!-- /section planpricing -->
@@ -244,27 +246,29 @@
  
     </div><! --/container -->
  
-        <! -- ******************** FOOTER ******************** -->    
-        <main class="footercta" role="main">
-            <div class="container">
-                <h1>The Most Simple & <strong>Powerful Way</strong> <br>
-                    to <strong>launch</strong> your product</h1>
- 
-                <div class="row">
-                    <div class="col-md-12 breath text-center"> 
-                        <a href="index.html#top" class="btn btn-success btn-lg gototop">GET EARLY ACCESS</a> 
-                    </div>
-                </div>
-            </div><! --/container -->
-        </main><! --/main -->
- 
+    <! -- ******************** FOOTER ******************** -->    
+    <main class="footercta" role="main">
         <div class="container">
-            <section class="row breath">
-                <div class="col-md-12 footerlinks">
-                    <p>&copy; JustPack, Inc. 2016</p>
+            <h1>The <strong>simple</strong> & <strong>exciting</strong> way <br>
+                to <strong>live</strong> better.</h1>
+
+            <div class="row">
+                <div class="col-md-12 breath"> 
+                    <a href="#top">
+                    <button class="btn btn-success btn-lg">
+                    Let's go somewhere</button></a> 
                 </div>
-            </section><! --/section -->
+            </div>
         </div><! --/container -->
+    </main><! --/main -->
+
+    <div class="container">
+        <section class="row breath">
+            <div class="col-md-12 footerlinks">
+                <p>&copy; JustPack, Inc. 2016</p>
+            </div>
+        </section><! --/section -->
+    </div><! --/container -->
  
  
  
