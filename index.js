@@ -58,7 +58,7 @@ app.post('/trip_notes', function(req, res) {
     smtpTransport.sendMail({
        from: "Travel Buddy <fun-instigator@justpack.co>", // sender address
        to: "Boss <ajcihla@gmail.com>", // comma separated list of receivers
-       subject: "Bro, New Trip NOTES", // Subject line
+       subject: "New Trip NOTES", // Subject line
        text: "Check it out " + JSON.stringify(data) // plaintext body
     }, function(error, response){
        if(error){
@@ -87,19 +87,19 @@ app.post('/request_trip', function(req, res) {
         // SQL Query > Insert Data
         client.query("INSERT INTO submissions(travelers, departure, price, email) values($1, $2, $3, $4)", [data.travelers, data.departure, data.price, data.email]);
         console.log('inserted ', data);
-        smtpTransport.sendMail({
-           from: "Travel Buddy <fun-instigator@justpack.co>", // sender address
-           to: "Boss <ajcihla@gmail.com>", // comma separated list of receivers
-           subject: "Bro, New Trip Request", // Subject line
-           text: "Check it out " + JSON.stringify(data) // plaintext body
-        }, function(error, response){
-           if(error){
-               console.log(error);
-           }else{
-               console.log("Message sent: " + response.message);
-           }
-        });
-        res.render('pages/congrats');
     });
+    smtpTransport.sendMail({
+       from: "Travel Buddy <fun-instigator@justpack.co>", // sender address
+       to: "Boss <ajcihla@gmail.com>", // comma separated list of receivers
+       subject: "Bro, New Trip Request", // Subject line
+       text: "Check it out " + JSON.stringify(data) // plaintext body
+    }, function(error, response){
+       if(error){
+           console.log(error);
+       }else{
+           console.log("Message sent: " + response.message);
+       }
+    });
+    res.render('pages/congrats');
 });
 
