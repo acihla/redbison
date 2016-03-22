@@ -58,7 +58,7 @@ app.post('/trip_notes', function(req, res) {
     smtpTransport.sendMail({
        from: "Travel Buddy <fun-instigator@justpack.co>", // sender address
        to: "Boss <ajcihla@gmail.com>", // comma separated list of receivers
-       subject: "New Trip NOTES", // Subject line
+       subject: "Bro, New Trip NOTES", // Subject line
        text: "Check it out " + JSON.stringify(data) // plaintext body
     }, function(error, response){
        if(error){
