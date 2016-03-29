@@ -47,11 +47,34 @@ app.get('/', function(request, response) {
   response.render('pages/index');
 });
 
+app.get('/bookit', function(request, response) {
+  response.render('pages/bookit');
+});
+
 app.get('/cool', function(request, response) {
 	response.send(cool());
 });
 
 app.post('/trip_notes', function(req, res) {
+	var results = [];
+	console.log(req.body);
+	var data = req.body;
+    smtpTransport.sendMail({
+       from: "Travel Buddy <fun-instigator@justpack.co>", // sender address
+       to: "Boss <ajcihla@gmail.com>", // comma separated list of receivers
+       subject: "Bro, New Trip NOTES", // Subject line
+       text: "Check it out " + JSON.stringify(data) // plaintext body
+    }, function(error, response){
+       if(error){
+           console.log(error);
+       }else{
+           console.log("Message sent: " + response.message);
+       }
+    });
+    res.render('pages/index');
+});
+
+app.post('/bookit', function(req, res) {
 	var results = [];
 	console.log(req.body);
 	var data = req.body;
@@ -88,6 +111,7 @@ app.post('/request_trip', function(req, res) {
         client.query("INSERT INTO submissions(travelers, departure, price, email) values($1, $2, $3, $4)", [data.travelers, data.departure, data.price, data.email]);
         console.log('inserted ', data);
     });
+    //send email to AJ
     smtpTransport.sendMail({
        from: "Travel Buddy <fun-instigator@justpack.co>", // sender address
        to: "Boss <ajcihla@gmail.com>", // comma separated list of receivers
@@ -97,7 +121,20 @@ app.post('/request_trip', function(req, res) {
        if(error){
            console.log(error);
        }else{
-           console.log("Message sent: " + response.message);
+           console.log("JP-internal email sent: " + response.message);
+       }
+    });
+    //send email to customer
+    smtpTransport.sendMail({
+       from: "Travel Buddy <fun-instigator@justpack.co>", // sender address
+       to: JSON.stringify(data.email), // comma separated list of receivers
+       subject: "Justpack: You're on your way...", // Subject line
+       text: "We'll get back to you shortly with a handcrafted plan for you to act on. Your only responsibility? Take off Friday and pack a carryon. See you soon!" // plaintext body
+    }, function(error, response){
+       if(error){
+           console.log(error);
+       }else{
+           console.log("Customer email sent: " + response.message);
        }
     });
     res.render('pages/congrats');

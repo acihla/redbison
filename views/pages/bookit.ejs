@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/header.ejs %>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,600' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+	<div class="preloader"></div>
+	<! -- ******************** FEATURES SECTION ******************** -->    
+	<main class="bookit-form" role="main">
+	    <div class="container" >
+        	<h1>You're 5 mins away from being booked</h1>
+        	<h2>...we cannot wait to get you there.</h2>
+        	
+        	<div class="trip-notes">
+	            <div class="col-sm-8 col-sm-offset-2">
+	        		<h3>All we need is a phone number and a time to call.</h3>
+		    		
+	        	</div>
+		        <div class="col-md-12 text-center"> 
+		       		<form class="form-inline trip-query" role="form" method="POST" action="/bookit">
+		        		<div class="row">
+		                    <div class="form-group-lg">
+		                        <div class="col-sm-4 col-sm-offset-2">
+		                            <label class="trip-label" for="phone" style="display:none">This will never be shared.</label>
+		                            <input id="phone" class="email-input input-lg col-sm-12" name="phone" placeholder="555-555-5555" required>
+		                        </div>
+		                        <div class="col-sm-4">
+		                            <label class="trip-label" for="time" style="display:none">Note a time and preference.</label>
+		                            <input id="time" class="email-input input-lg col-sm-12" name="time" placeholder="Try me before 9AM PST" required>
+		                        </div>
+		                        <div class="col-sm-2">
+		                            <label class="trip-label" for="email" style="display:none">&#9997;</label>
+		                            <button type="submit" class="btn btn-success btn-lg">Justpack</button>
+		                        </div>
+		                    </div>
+		                </div>
+	            	</form>
+		        </div>
+		        <div class="col-sm-8 col-sm-offset-2">
+		    		<p>Why? To verify you are a real person. It takes a TON of human energy to put these bookings together. By sharing 5 minutes with us, we are able to get you booked ASAP so we can get out of your hair. At least, until next time.</p>
+	        	</div>
+		    </div>
+	    </div>
+	</main>
+</body>

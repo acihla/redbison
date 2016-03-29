@@ -559,6 +559,26 @@ to {
   box-shadow: none;
 }
 
+/*==========9. BOOKIT PAGE ==============*/
+
+.bookit-form {
+  height: 900px;
+  padding: 60px 15px;
+  color: #FFF;
+  text-align: center;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+  background-color: #6883cc;
+  background-image:url("../images/austinsunset.png");
+  background-repeat: no-repeat;
+  background-position: 25% 95%;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-shadow: none;
+}
+
 /*==========9. CUSTOM MEDIA QUERIES==============*/
 
 
