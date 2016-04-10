@@ -63,7 +63,7 @@ app.post('/trip_notes', function(req, res) {
        from: "Travel Buddy <fun-instigator@justpack.co>", // sender address
        to: "Boss <ajcihla@gmail.com>", // comma separated list of receivers
        subject: "Bro, New Trip NOTES", // Subject line
-       text: "Check it out " + JSON.stringify(data) // plaintext body
+       text: "Check it out " + JSON.stringify(data) + JSON.stringify(app.locals.email) // plaintext body
     }, function(error, response){
        if(error){
            console.log(error);
@@ -99,6 +99,7 @@ app.post('/request_trip', function(req, res) {
     // Grab data from http request
     var data = {travelers: req.body.travelers, departure: req.body.departure, price: req.body.price, email : req.body.email};
     pg.defaults.ssl = true;
+    app.locals.email = req.body.email;
     // Get a Postgres client from the connection pool
     pg.connect(conString, function(err, client, done) {
         // Handle connection errors
