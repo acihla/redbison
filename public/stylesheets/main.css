@@ -119,7 +119,7 @@ a:hover,a:focus{color:#5173bd;}
   text-align:center;
   text-shadow:0 1px 0 rgba(0,0,0,.1);
   background-color:#6883cc;
-  background-image:url("../images/yosemitestocksm.png");
+  background-image:url("../images/yosemitestocksm.jpg");
   background-repeat:no-repeat;
   background-position:center center;
   background-attachment:fixed;
@@ -261,7 +261,8 @@ transition: all 1s ease-in-out;
 }
 
 #popUpDiv {
-position:relative;
+position:fixed;
+top: 50%;
 width: 100%;
 padding-top: 10px;
 z-index: 9002;
@@ -519,7 +520,7 @@ to {
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
   background-color: #6883cc;
-  background-image:url("../images/airport.png");
+  background-image:url("../images/airport.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -568,7 +569,7 @@ to {
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
   background-color: #6883cc;
-  background-image:url("../images/austinsunset.png");
+  background-image:url("../images/austinsunset.jpg");
   background-repeat: no-repeat;
   background-position: 25% 95%;
   background-attachment: fixed;
