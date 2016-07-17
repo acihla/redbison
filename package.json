@@ -1,8 +1,8 @@
 {
-  "name": "RedBison Supplements",
+  "name": "textbod",
   "version": "0.1.5",
-  "description": "RedBison Supplements",
-  "repository": "https://github.com/acihla/redbison.git",
+  "description": "textbod",
+  "repository": "https://github.com/acihla/textbod.git",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/acihla/redbison.git"
+    "url": "https://github.com/acihla/textbod.git"
   },
   "keywords": [
     "node",
