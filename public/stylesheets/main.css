@@ -94,13 +94,13 @@ a:hover,a:focus{color:#5173bd;}
   
 .input-lg{
   height:50px;
+  vertical-align: bottom;
 }
 
 .btn-lg,.btn-group-lg>.btn{
   padding:10px 22px;
   height:50px;
-  vertical-align: bottom;
-  box-shadow: none;
+  vertical-align: center;
   }
 .btn-center {
   min-height: 80px;
@@ -114,12 +114,12 @@ a:hover,a:focus{color:#5173bd;}
 
 .masthead{
   position:relative;
-  padding:80px 15px;
+  padding:140px 20px 160px;
   color:#FFF;
   text-align:center;
   text-shadow:0 1px 0 rgba(0,0,0,.1);
   background-color:#6883cc;
-  background-image:url("../images/yosemitestocksm.jpg");
+  background-image:url("../images/reach.jpg");
   background-repeat:no-repeat;
   background-position:center center;
   background-attachment:fixed;
@@ -194,7 +194,8 @@ to {
 /*animation ends*/
 
 .logo {
-  padding: 45px 0;
+  padding-top: 5px;
+  padding-bottom: 30px;
   text-align:center;
 }
 .logo a img {
@@ -214,7 +215,6 @@ button.btn-success {
   /*-webkit-box-shadow: 0 3px 0 rgba(2, 154, 67, 1);
   box-shadow: 0 3px 0 rgba(2, 154, 67, 1);*/
   box-shadow: none;
-  height: 100%;
 }
 .btn-success:hover, .btn-success:focus, .btn-success:active {
   background-color: #29c36a;
@@ -515,12 +515,12 @@ to {
 
 
 .footercta {
-  padding: 60px 15px;
+  padding: 110px 15px 170px;
   color: #FFF;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
   background-color: #6883cc;
-  background-image:url("../images/airport.jpg");
+  background-image:url("../images/think.jpg");
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -544,12 +544,12 @@ to {
 
 .congrats-form {
   height: 900px;
-  padding: 60px 15px;
+  padding: 220px 15px;
   color: #FFF;
   text-align: center;
   text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
   background-color: #6883cc;
-  background-image:url("../images/feetTravel.png");
+  background-image:url("../images/mountains.gif");
   background-repeat: no-repeat;
   background-position: 25% 95%;
   background-attachment: fixed;
@@ -618,7 +618,7 @@ line-height: 40px;
  margin-top: 30px;
 }
  .masthead {
-padding: 40px 15px;
+padding: 20px 15px;
 }
 }
  @media (max-width: 480px) {
@@ -646,4 +646,50 @@ label.trip-label {
 .email-input {
   font-family:'Open Sans',Arial,sans-serif;
   color:#94a3a8;
+}
+
+
+.nourish {
+  padding:-1px;
+  height:20px;
+  background-color: #6883cc;
+  background-image:url("../images/nourish1.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-shadow: none;
+}
+
+.fortify {
+  padding-top:5px;
+  height:20px;
+  background-color: #6883cc;
+  background-image:url("../images/fortify3.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-shadow: none;
+}
+
+.clarity {
+  padding-top:5px;
+  height:20px;
+  background-color: #6883cc;
+  background-image:url("../images/clarity1.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  box-shadow: none;
 }

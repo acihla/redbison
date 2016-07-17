@@ -14,52 +14,20 @@
     <! -- ******************** MASTHEAD SECTION ******************** -->    
     <main id="top" class="masthead" role="main">
         <div class="container">
-            <div class="logo"> <a href="#"><img src="images/justpackwhitemedium.png" alt="logo"></a>
+            <div class="logo"> <a href="#"><img src="images/textbodlogo.png" alt="logo"></a>
             </div>
             
-            <h1>Travel is <strong>good</strong>. Stress is <strong>bad</strong>.</h1>
+            <h3>No book. No app. Just simple instruction and friendly dialog.</h3>
             
             
             <div id="blanket" style="display:none" onclick="popup('popUpDiv')"></div>
-            <form class="form-inline trip-query" role="form" id="subscribeForm" method="POST" action="/request_trip">
-                <div class="row form-group-lg">
-                    <!--<div class="col-sm-3 col-sm-offset-1">
-                        <label for="travelers" class="trip-label">Guests</label>
-                        <select id="travelers" class="form-control" name="travelers">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="Army">Army</option>
-                        </select>
-                    </div> -->
-                    
-                    <div class="col-sm-2 col-sm-offset-3">
-                        <label for="departure" class="trip-label"><b>From</b></label>
-                        <input id="departure" class="form-control" name="departure" placeholder="Departure City" required>
-                    </div>
-                    <!--<div class="col-sm-1">
-                        <h2>+</h2>
-                    </div>-->
-                    <div class="col-sm-2">
-                        <label for="price" class="trip-label" for="price">$$$</label>
-                        <select id="price" class="form-control" name="price">
-                            <option value="500">Under $500</option>
-                            <option value="700">Under $700</option>
-                            <option value="1000">Under $1,000</option>
-                            <option value="1500">Under $1,500</option>
-                            <option value="Lots">Ball out</option>
-                        </select>
-                    </div>
-                    <div class="col-sm-2">
-                        <label class="trip-label" for="getgoing">&#9992;...&#9992;...&#9992;</label>
-                        <button class="btn btn-success btn-lg form-control" type="button" onclick="popup('popUpDiv')">Get going</button>
+            <form class="form-inline trip-query" role="form" id="subscribeForm" method="POST" action="/request_sample">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <label class="trip-label" for="email" style="display:none">textbod phone #</label>
+                        <input id="coupon" class="input-lg" name="phone" type="text" placeholder="(555)-555-5555" value="" >
+                        <label class="trip-label" for="getgoing" style="display:none">Try textbod</label>
+                        <button class="btn btn-success btn-lg form-control" type="button" onclick="popup('popUpDiv')">Sign Up</button>
                     </div>
                 </div>
                 <!--<div class="row">
@@ -68,22 +36,18 @@
                     </div>
                 </div>-->
                 <div class="row" id="popUpDiv" style="display:none">
-                    <div class="form-group-lg">
-                        <!--<div class="col-sm-6 col-sm-offset-2">
-                            <label class="trip-label" for="email" style="display:none">Access code</label>
-                            <input id="coupon" class="email-input input-lg col-sm-6 col-sm-offset-3" name="coupon" type="text" placeholder="Have a signup code? Put it here." value="" >
-                        </div>-->
-                        <div class="col-sm-6 col-sm-offset-1">
-                            <label class="trip-label" for="email" style="display:none">Email</label>
-                            <input id="email" class="email-input input-lg col-sm-12" name="email" type="email" placeholder="Email here. No spam." required>
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div class="col-sm-10">
+                            <label class="trip-label" for="email"></label>
+                            <input id="email" class="email-input input-lg col-sm-12" name="email" type="email" placeholder="Thanks for signing up! Want to stay tuned? Share your email here." required>
                         </div>
                         <div class="col-sm-2">
                             <label class="trip-label" for="email" style="display:none">&#9997;</label>
-                            <button type="submit" class="btn btn-success btn-lg">Let's go!</button>
+                            <button type="submit" class="btn btn-success btn-lg form-control">Receive Email</button>
                         </div>
                     </div>
                 </div>
-            </form>
+            </form> 
  
             <!--<a href="index.html#explore" class="scrollto">
             <p>SCROLL DOWN TO EXPLORE</p>
@@ -108,8 +72,8 @@
         </section>--><! --/section -->
  
         <div class="section-title">
-            <h2>Seriously, Justpack.</h2>
-            <h4>It's your vacay. Use it when you need it.</h4>
+            <h2>Stop reading about achieving goals...</h2>
+            <h4>and start getting things done. Textbod is a friend - to keep you honest, disciplined, and fit!</h4>
         </div>
         
         <section class="row features">
@@ -117,8 +81,8 @@
                 <div class="thumbnail"> 
                     <img src="images/service_01.png" alt="analytics-icon">
                     <div class="caption">
-                        <h3>Powerful experiences.</h3>
-                        <p>How do we pick our destinations... we've been there, and it was kickass.</p>
+                        <h3>Hand-tailored</h3>
+                        <p>We've tried various systems for years and have found what really works and what doesn't.</p>
                     </div>
                 </div><! --/thumbnail -->
             </div><! --/col-sm-6-->
@@ -127,8 +91,8 @@
                 <div class="thumbnail"> 
                     <img src="images/service_02.png" alt="analytics-icon">
                     <div class="caption">
-                        <h3>Fully budgeted.</h3>
-                        <p>We account for everything from airfare to dinner fare in our selection.</p>
+                        <h3>21st-century friendly</h3>
+                        <p>We have the tools to listen and serve our customers. That doesn't mean you need to download yet another app.</p>
                     </div>
                 </div><! --/thumbnail -->
             </div><! --/col-sm-6-->
@@ -137,8 +101,8 @@
                 <div class="thumbnail"> 
                     <img src="images/service_03.png" alt="analytics-icon">
                     <div class="caption">
-                        <h3>We'll haggle for you!</h3>
-                        <p>Not really. But we WILL use the latest in tech to stretch your dollar to the absolute max.</p>
+                        <h3>Success Stories</h3>
+                        <p>You know what is best about being an early user? You get all the glory! Join today and be a part of the story.</p>
                     </div>
                 </div><! --/thumbnail -->
             </div><! --/col-sm-6-->
@@ -147,8 +111,8 @@
                 <div class="thumbnail"> 
                     <img src="images/service_04.png" alt="analytics-icon">
                     <div class="caption">
-                        <h3>Less is more.</h3>
-                        <p>We'll give you a couple weeks notice on a 3-day-weekend trip. All you need to do is take Friday off.</p>
+                        <h3>Care for detail</h3>
+                        <p>We are particular. Expect the best from us, and hold us to a higher standard.</p>
                     </div>
                 </div><! --/thumbnail -->
             </div><! --/col-sm-6-->
@@ -157,70 +121,36 @@
     </div><! --/container -->
  
 
-        <! -- ******************** TESTIMONIALS SECTION ******************** -->     
-        <div class="highlight testimonials">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Why would anyone use Justpack?</h2>
-                    <h4>Listen to these people. </h4>
-                </div>
-                
-                <section class="row breath">
-                    <div class="col-md-6">
-                        <div class="testblock">I'm prone to overtly aggressive outbursts when stuck in the office for too long. I've also realized an alarming spike in hairloss whenever tasked with planning a trip with friends. I use Justpack so that I don't die an early, stress-induced death.</div>
-                        <div class="clientblock"> 
-                            <img src="images/customer-img-1.jpg" alt=".">
-                            <p><strong>Wesley Gibson</strong> <br>
-                                Sound familiar?
-                            </p>
-                        </div>
-                    </div><! --/col-md-6 -->
-                    
-                    <div class="col-md-6">
-                        <div class="testblock">I've realized that living in a bubble, of my own creation, is not how I want to live my life. Life fulfillment comes from a spectrum of experiences. A spectrum that one simply cannot find from yet another Netflix binge. </div>
-                        <div class="clientblock"> 
-                            <img src="images/customer-img-2.jpg" alt=".">
-                            <p><strong>Peter Gibbons</strong> <br>
-                                Seriously. Is this NOT true?
-                            </p>
-                        </div>
-                    </div><! --/col-md-6 -->
-                </section><! --/section -->
- 
-            </div><! --/container -->
-        </div><! --/highlight Testimonials -->
- 
-
         <! -- ******************** PRICING LIST ******************** -->      
         <div class="container">
  
             <div class="section-title">
                 <h2>Honest pricing. No surprises.</h2>
-                <h4>No blood-pact. No credit card required. </h4>
+                <h4>No blood-pact. Free to try. </h4>
             </div>
             <section class="row breath planpricing">
             
                 <div class="col-md-4">
                     <div class="pricing color1">
-                        <div class="planname">Individual</div>
-                        <div class="price"> <span class="curr">$</span>25<span class="per"></span></div>
-                        <div class="billing">Billed @ booking</div>
+                        <div class="planname">Trial</div>
+                        <div class="price"> <span class="curr">$</span>0<span class="per"></span></div>
+                        <div class="billing">Give it a spin</div>
                     </div><! --/pricing -->
                 </div><! --/col-md-4-->
                 
                 <div class="col-md-4">
                     <div class="pricing color2">
-                        <div class="planname">Group</div>
-                        <div class="price"> <span class="curr">$</span>20<span class="per">/guest</span></div>
-                        <div class="billing">Billed @ booking</div>
+                        <div class="planname">Monthly</div>
+                        <div class="price"> <span class="curr">$</span>5<span class="per"></span>/month</div>
+                        <div class="billing">Let's see some results</div>
                     </div><! --/pricing -->
                 </div><! --/col-md-4-->
                 
                 <div class="col-md-4">
                     <div class="pricing color3">
-                        <div class="planname">Subscription</div>
-                        <div class="price"> <span class="curr">$</span>15<span class="per">/month</span></div>
-                        <div class="billing">Billed Monthly</div>
+                        <div class="planname">Annual</div>
+                        <div class="price"> <span class="curr">$</span>50<span class="per"></span>/year</div>
+                        <div class="billing">Make the commitment to health</div>
                     </div><! --/pricing -->
                 </div><! --/col-md-4-->
             </section><!-- /section planpricing -->
@@ -230,22 +160,22 @@
  
         <div class="section-title">
             <h5>Frequently Asked Questions</h5>
-            <p>(usually about money)</p>
+            <p>(Not here? Email us - service@textbod.com)</p>
         </div>
         
         <section class="row faq breath">
             <div class="col-md-6">
-                <h6>How do I know what I'm paying for?</h6>
-                <p>Once you review your itinerary, and agree to take Friday off, we will send you an itemized receipt that breaks down all associated costs.</p>
-                <h6>How do I pay?</h6>
-                <p>We take venmo, paypal, and credit card... we would probably take cash too if that was a feasible option, but alas. We can even provide financings for up to 12 months.</p>
+                <h6>How do I know it works?</h6>
+                <p>Give it a try. We're sure it will be the most no-nonsense, result driven, and refreshingly comfortable experience that you'll stick around for months to come.</p>
+                <h6>Do you stop at workouts?</h6>
+                <p>Nope. We try to provide as holistic of a service as possible. We'll give you occasional eating tips.</p>
             </div><! --/col-md-6 -->
             
             <div class="col-md-6">
-                <h6>Can I request specific dates, things to do, target climates, etc?</h6>
-                <p>Yes. After you have submitted the above departure+money form you will have the opportunity to leave us a note with any specifics you'd like. We WILL make it happen.</p>
-                <h6>Why are you doing this?</h6>
-                <p>What's the most exciting part of any trip? It's the days/weeks leading up to your departure and the pleasant surprises throughout. We know exactly where to take you and exactly how to play you. Try us.</p>
+                <h6>What if I refer a friend?</h6>
+                <p>For every friend you invite, you'll receive 1-3 months of free training! The more the merrier and we'll reward you for helping. Make sure to mention who you invited via text.</p>
+                <h6>I have an idea, concern, or general thought. Where can I leave it?</h6>
+                <p>We LOVE it when our customers think of us. It makes our day to hear from you. Feel free to reply to the texts you receive! We'll return the favor.</p>
             </div><! --/col-md-6 -->
         </section><! --/section faq -->
  
@@ -254,14 +184,13 @@
     <! -- ******************** FOOTER ******************** -->    
     <main class="footercta" role="main">
         <div class="container">
-            <h1>The <strong>simple</strong> & <strong>exciting</strong><br>
-                way to <strong>travel</strong>.</h1>
-
             <div class="row">
+
+                <br><h2>The <strong>simple</strong> & <strong>effective</strong> way to <strong>train</strong>.</h2>
                 <div class="col-md-12 breath"> 
                     <a href="#top">
                     <button class="btn btn-success btn-lg">
-                    Let's go somewhere</button></a> 
+                    try textbod today</button></a> 
                 </div>
             </div>
         </div><! --/container -->
@@ -270,7 +199,7 @@
     <div class="container">
         <section class="row breath">
             <div class="col-md-12 footerlinks">
-                <p>&copy; JustPack, Inc. 2016</p>
+                <p>&copy; textbod, Inc. 2016</p>
             </div>
         </section><! --/section -->
     </div><! --/container -->
