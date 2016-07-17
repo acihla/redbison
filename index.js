@@ -1,4 +1,3 @@
-var cool = require('cool-ascii-faces');
 var express = require('express');
 var bodyParser = require('body-parser');
 var pg = require('pg');
@@ -86,11 +85,11 @@ app.post('/bookit', function(req, res) {
     res.render('pages/index');
 });
 
-app.post('/request_sample', function(req, res) {
+app.post('/signup', function(req, res) {
 	var results = [];
 	console.log(req.body);
     // Grab data from http request
-    var data = {product: req.body.product, email : req.body.email};
+    var data = {phone: req.body.phone, email : req.body.email};
     pg.defaults.ssl = true;
     app.locals.email = req.body.email;
     // Get a Postgres client from the connection pool
@@ -102,14 +101,14 @@ app.post('/request_sample', function(req, res) {
           return res.status(500).json({ success: false, data: err});
         }
         // SQL Query > Insert Data
-        client.query("INSERT INTO request_sample(product, email) values($1, $2)", [data.product, data.email]);
+        client.query("INSERT INTO request_sample(phone, email) values($1, $2)", [data.phone, data.email]);
         console.log('inserted ', data);
     });
     //send email to AJ
     smtpTransport.sendMail({
-       from: "Travel Buddy <alex.cihla@gmail.com>", // sender address
+       from: "Textbod Buddy <alex.cihla@gmail.com>", // sender address
        to: "Boss <ajcihla@gmail.com>", // comma separated list of receivers
-       subject: "Yo dude, New sample Request", // Subject line
+       subject: "Yo dude, New Textbod Request", // Subject line
        text: "Check it out " + JSON.stringify(data) // plaintext body
     }, function(error, response){
        if(error){
@@ -120,10 +119,10 @@ app.post('/request_sample', function(req, res) {
     });
     //send email to customer
     smtpTransport.sendMail({
-       from: "RedBison Supplements <redbison@gmail.com>", // sender address
+       from: "Textbod Life<textybod@gmail.com>", // sender address
        to: JSON.stringify(data.email), // comma separated list of receivers
-       subject: "Waitlist: You're on your way to change", // Subject line
-       text: "We'll get back to you shortly when our next shipment comes in. You'll receive a discount on the next batch we get because we appreciate you (and your patience). Thanks! \n\n -RedBison Team" // plaintext body
+       subject: "Waitlist: All trainers are busy with other clients, we will reach out shortly", // Subject line
+       text: "We'll get back to you as quickly as we can when the next available trainer becomes available. You'll receive a discount on any future business because we appreciate you (and your patience). Thanks! \n\n -textbod team" // plaintext body
     }, function(error, response){
        if(error){
            console.log(error);
