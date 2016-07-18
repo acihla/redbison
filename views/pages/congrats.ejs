@@ -11,10 +11,29 @@
 	<! -- ******************** FEATURES SECTION ******************** -->    
 	<main class="congrats-form" role="main">
 	    <div class="container" >
-        	<h1>We're out of stock!</h1>
-        	<h1>...but you've been added to our waitlist.</h1>
-        	<h3>You'll get a special discount when our next batch is ready.</h3>
-        	
+            <div>
+            	<h1>We're on our way!</h1>
+            	<h1>... you've been added to our waitlist.</h1>
+            	<h3>You'll get a special discount when our next trainer is ready. We appreciate your interest!</h3>
+            </div>
+            <div id="blanket" style="display:none" onclick="popup('popUpDiv')"></div>
+            <div class="col-sm-2 col-sm-offset-5">
+                <button class="btn btn-success btn-lg form-control" type="button" onclick="popup('popUpDiv')">Get Updates</button>
+            </div>
+            <form class="form-inline trip-query" role="form" id="subscribeForm" method="POST" action="/waitlist">
+                <div class="row" id="popUpDiv" style="display:none">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <div class="col-sm-10">
+                            <label class="trip-label" for="email"></label>
+                            <input id="email" class="email-input input-lg col-sm-12" name="email" type="email" placeholder="Thanks for signing up! Want to stay tuned? Share your email here." required>
+                        </div>
+                        <div class="col-sm-2">
+                            <label class="trip-label" for="email" style="display:none">&#9997;</label>
+                            <button type="submit" class="btn btn-success btn-lg form-control">Receive Email</button>
+                        </div>
+                    </div>
+                </div>
+            </form> 
         	<!--<div class="trip-notes">
 	            <div class="col-sm-8 col-sm-offset-2">
 	        		<h3>Have an idea to share? Include it below.</h3>
@@ -39,7 +58,9 @@
 		    </div> -->
 	    </div>
 	</main>
-	<! -- ******************** FEATURES SECTION ******************** -->    
+	
+
+    <! -- ******************** FEATURES SECTION ******************** -->    
     <div class="container" id="explore">
  
         <!--<div class="section-title">
@@ -54,8 +75,8 @@
         </section>--><! --/section -->
  
         <div class="section-title">
-            <h2>Supplements - for life.</h2>
-            <h4>RedBison helps you be the best you can be. Kill the excuses and execute your plan.</h4>
+            <h2>Stop reading about achieving goals...</h2>
+            <h4>and start getting things done. Textbod is a friend - to keep you honest, disciplined, and fit!</h4>
         </div>
         
         <section class="row features">
@@ -63,8 +84,8 @@
                 <div class="thumbnail"> 
                     <img src="images/service_01.png" alt="analytics-icon">
                     <div class="caption">
-                        <h3>Hand-tailored formulas</h3>
-                        <p>We've tried various supplements for years and have found what REALLY works and what doesn't.</p>
+                        <h3>Hand-tailored</h3>
+                        <p>We've tried various systems for years and have found what really works and what doesn't.</p>
                     </div>
                 </div><! --/thumbnail -->
             </div><! --/col-sm-6-->
@@ -74,7 +95,7 @@
                     <img src="images/service_02.png" alt="analytics-icon">
                     <div class="caption">
                         <h3>21st-century friendly</h3>
-                        <p>You have thoughts, questions, and opinions. We have the tools to listen and serve our customers.</p>
+                        <p>We have the tools to listen and serve our customers. That doesn't mean you need to download yet another app.</p>
                     </div>
                 </div><! --/thumbnail -->
             </div><! --/col-sm-6-->
@@ -83,8 +104,8 @@
                 <div class="thumbnail"> 
                     <img src="images/service_03.png" alt="analytics-icon">
                     <div class="caption">
-                        <h3>Be part of the story</h3>
-                        <p>We are actively building success stories from our early user base. Be a part of history by sharing yours.</p>
+                        <h3>Success Stories</h3>
+                        <p>You know what is best about being an early user? You get all the glory! Join today and be a part of the story.</p>
                     </div>
                 </div><! --/thumbnail -->
             </div><! --/col-sm-6-->
@@ -94,11 +115,65 @@
                     <img src="images/service_04.png" alt="analytics-icon">
                     <div class="caption">
                         <h3>Care for detail</h3>
-                        <p>We are particular. Expect the best from us, and hold us to a higher standard. We can take it.</p>
+                        <p>We are particular. Expect the best from us, and hold us to a higher standard.</p>
                     </div>
                 </div><! --/thumbnail -->
             </div><! --/col-sm-6-->
         </section><! --/section -->
  
     </div><! --/container -->
+ 
+    <script>
+    function blanket_size(popUpDivVar) {
+        if (typeof window.innerWidth != 'undefined') {
+            viewportheight = window.innerHeight;
+        } else {
+            viewportheight = document.documentElement.clientHeight;
+        }
+        if ((viewportheight > document.body.parentNode.scrollHeight) && (viewportheight > document.body.parentNode.clientHeight)) {
+            blanket_height = viewportheight;
+        } else {
+            if (document.body.parentNode.clientHeight > document.body.parentNode.scrollHeight) {
+                blanket_height = document.body.parentNode.clientHeight;
+            } else {
+                blanket_height = document.body.parentNode.scrollHeight;
+            }
+        }
+        var blanket = document.getElementById('blanket');
+        blanket.style.height = blanket_height + 'px';
+        var popUpDiv = document.getElementById(popUpDivVar);
+    }
+
+    function window_pos(popUpDivVar) {
+        if (typeof window.innerWidth != 'undefined') {
+            viewportwidth = window.innerHeight;
+        } else {
+            viewportwidth = document.documentElement.clientHeight;
+        }
+        if ((viewportwidth > document.body.parentNode.scrollWidth) && (viewportwidth > document.body.parentNode.clientWidth)) {
+            window_width = viewportwidth;
+        } else {
+            if (document.body.parentNode.clientWidth > document.body.parentNode.scrollWidth) {
+                window_width = document.body.parentNode.clientWidth;
+            } else {
+                window_width = document.body.parentNode.scrollWidth;
+            }
+        }
+        var popUpDiv = document.getElementById(popUpDivVar);
+        //window_width=window_width/2-200;//200 is half popup's width
+        //popUpDiv.style.left = window_width + 'px';
+    }
+    function popup(windowname) {
+        blanket_size(windowname);
+        //window_pos(windowname);
+        toggle('blanket');
+        toggle(windowname);     
+    }
+
+    function toggle(div_id) {
+    var el = document.getElementById(div_id);
+    if ( el.style.display == 'none' ) { el.style.display = 'block';}
+    else {el.style.display = 'none';}
+}
+    </script>
 </body>

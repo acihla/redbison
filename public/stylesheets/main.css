@@ -94,7 +94,9 @@ a:hover,a:focus{color:#5173bd;}
   
 .input-lg{
   height:50px;
+  color: #94a3a8;
   vertical-align: bottom;
+  text-align: center;
 }
 
 .btn-lg,.btn-group-lg>.btn{

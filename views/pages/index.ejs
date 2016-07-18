@@ -19,35 +19,22 @@
             
             <h3>No book. No app. Just simple instruction and friendly dialog.</h3>
             
-            
-            <div id="blanket" style="display:none" onclick="popup('popUpDiv')"></div>
-            <form class="form-inline trip-query" role="form" id="subscribeForm" method="POST" action="/request_sample">
+            <form class="form-inline trip-query" role="form" id="subscribeForm" method="POST" action="/signup">
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
                         <label class="trip-label" for="phone" style="display:none">textbod phone #</label>
-                        <input id="phone" class="input-lg" name="phone" type="text" placeholder="(555)-555-5555" value="" >
+                        <input id="phone" class="input-lg" name="phone" type="tel" pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" placeholder="(555)-555-5555" value="" >
                         <label class="trip-label" for="getgoing" style="display:none">Try textbod</label>
-                        <button class="btn btn-success btn-lg form-control" type="button" onclick="popup('popUpDiv')">Sign Up</button>
+                        <button class="btn btn-success btn-lg form-control" type="submit">Sign Up</button>
                     </div>
                 </div>
+            </form>
                 <!--<div class="row">
                     <div class="col-sm-6 col-sm-offset-3">
                         <button class="btn btn-success btn-lg submit-query" type="button" onclick="popup('popUpDiv')">Get going...</button>
                     </div>
                 </div>-->
-                <div class="row" id="popUpDiv" style="display:none">
-                    <div class="col-sm-10 col-sm-offset-1">
-                        <div class="col-sm-10">
-                            <label class="trip-label" for="email"></label>
-                            <input id="email" class="email-input input-lg col-sm-12" name="email" type="email" placeholder="Thanks for signing up! Want to stay tuned? Share your email here." required>
-                        </div>
-                        <div class="col-sm-2">
-                            <label class="trip-label" for="email" style="display:none">&#9997;</label>
-                            <button type="submit" class="btn btn-success btn-lg form-control">Receive Email</button>
-                        </div>
-                    </div>
-                </div>
-            </form> 
+            
  
             <!--<a href="index.html#explore" class="scrollto">
             <p>SCROLL DOWN TO EXPLORE</p>
@@ -204,64 +191,7 @@
         </section><! --/section -->
     </div><! --/container -->
  
- 
- 
-<script src="js/jquery.js"></script>
-<script src="js/easing.js"></script>
-<script src="js/nicescroll.js"></script>
-<script src="js/bootstrap.js"></script>
- 
 <script>
-
-function toggle(div_id) {
-    var el = document.getElementById(div_id);
-    if ( el.style.display == 'none' ) { el.style.display = 'block';}
-    else {el.style.display = 'none';}
-}
-function blanket_size(popUpDivVar) {
-    if (typeof window.innerWidth != 'undefined') {
-        viewportheight = window.innerHeight;
-    } else {
-        viewportheight = document.documentElement.clientHeight;
-    }
-    if ((viewportheight > document.body.parentNode.scrollHeight) && (viewportheight > document.body.parentNode.clientHeight)) {
-        blanket_height = viewportheight;
-    } else {
-        if (document.body.parentNode.clientHeight > document.body.parentNode.scrollHeight) {
-            blanket_height = document.body.parentNode.clientHeight;
-        } else {
-            blanket_height = document.body.parentNode.scrollHeight;
-        }
-    }
-    var blanket = document.getElementById('blanket');
-    blanket.style.height = blanket_height + 'px';
-    var popUpDiv = document.getElementById(popUpDivVar);
-}
-function window_pos(popUpDivVar) {
-    if (typeof window.innerWidth != 'undefined') {
-        viewportwidth = window.innerHeight;
-    } else {
-        viewportwidth = document.documentElement.clientHeight;
-    }
-    if ((viewportwidth > document.body.parentNode.scrollWidth) && (viewportwidth > document.body.parentNode.clientWidth)) {
-        window_width = viewportwidth;
-    } else {
-        if (document.body.parentNode.clientWidth > document.body.parentNode.scrollWidth) {
-            window_width = document.body.parentNode.clientWidth;
-        } else {
-            window_width = document.body.parentNode.scrollWidth;
-        }
-    }
-    var popUpDiv = document.getElementById(popUpDivVar);
-    //window_width=window_width/2-200;//200 is half popup's width
-    //popUpDiv.style.left = window_width + 'px';
-}
-function popup(windowname) {
-    blanket_size(windowname);
-    //window_pos(windowname);
-    toggle('blanket');
-    toggle(windowname);     
-}
 
  $(function() {
     $('.scrollto, .gototop').bind('click',function(event){

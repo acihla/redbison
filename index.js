@@ -4,6 +4,13 @@ var pg = require('pg');
 var app = express();
 var conString = 'postgres://gbpfdujmzodkik:RcoNblyAq5nuMAKFP81IWyALF-@ec2-54-225-151-64.compute-1.amazonaws.com:5432/dasp62midgd3k5';
 var nodemailer = require("nodemailer");
+var smtpTransport = nodemailer.createTransport("SMTP",{
+   service: "Gmail",
+   auth: {
+       user: "textybod@gmail.com",
+       pass: "73%BjLL>"
+   }
+});
 app.set('port', (process.env.PORT || 5000));
 
 // views is directory for all template files
@@ -47,20 +54,34 @@ app.get('/cool', function(request, response) {
 	response.send(cool());
 });
 
-app.post('/trip_notes', function(req, res) {
+app.post('/waitlist', function(req, res) {
 	var results = [];
 	console.log(req.body);
-	var data = req.body;
+	var data = req.body.email;
     smtpTransport.sendMail({
-       from: "Travel Buddy <fun-instigator@justpack.co>", // sender address
+       from: "Travel Buddy <alex.cihla@gmail.com>", // sender address
        to: "Boss <ajcihla@gmail.com>", // comma separated list of receivers
-       subject: "Bro, New Trip NOTES", // Subject line
-       text: "Check it out " + JSON.stringify(data) + JSON.stringify(app.locals.email) // plaintext body
+       subject: "Bro, New Textbod email too!", // Subject line
+       text: "Check it out " + JSON.stringify(data) + JSON.stringify(app.locals.phone) // plaintext body
     }, function(error, response){
        if(error){
            console.log(error);
        }else{
            console.log("Message sent: " + response.message);
+       }
+    });
+
+    //send email to customer
+    smtpTransport.sendMail({
+       from: "Textbod Life<textybod@gmail.com>", // sender address
+       to: JSON.stringify(data), // comma separated list of receivers
+       subject: "Waitlist: All trainers are busy with other clients, we will reach out shortly", // Subject line
+       text: "We'll get back to you as quickly as we can when the next available trainer becomes available. You'll receive a discount on your future business - because we appreciate you (and your patience). Thanks! \n\n -textbod team" // plaintext body
+    }, function(error, response){
+       if(error){
+           console.log(error);
+       }else{
+           console.log("Customer email sent: " + response.message);
        }
     });
     res.render('pages/index');
@@ -89,11 +110,11 @@ app.post('/signup', function(req, res) {
 	var results = [];
 	console.log(req.body);
     // Grab data from http request
-    var data = {phone: req.body.phone, email : req.body.email};
-    pg.defaults.ssl = true;
-    app.locals.email = req.body.email;
+    var data = {phone: req.body.phone};
+      //pg.defaults.ssl = true;
+    app.locals.phone = req.body.phone;
     // Get a Postgres client from the connection pool
-    pg.connect(conString, function(err, client, done) {
+    /*pg.connect(conString, function(err, client, done) {
         // Handle connection errors
         if(err) {
           done();
@@ -103,7 +124,7 @@ app.post('/signup', function(req, res) {
         // SQL Query > Insert Data
         client.query("INSERT INTO request_sample(phone, email) values($1, $2)", [data.phone, data.email]);
         console.log('inserted ', data);
-    });
+    });*/
     //send email to AJ
     smtpTransport.sendMail({
        from: "Textbod Buddy <alex.cihla@gmail.com>", // sender address
@@ -115,19 +136,6 @@ app.post('/signup', function(req, res) {
            console.log(error);
        }else{
            console.log("RB-internal email sent: " + response.message);
-       }
-    });
-    //send email to customer
-    smtpTransport.sendMail({
-       from: "Textbod Life<textybod@gmail.com>", // sender address
-       to: JSON.stringify(data.email), // comma separated list of receivers
-       subject: "Waitlist: All trainers are busy with other clients, we will reach out shortly", // Subject line
-       text: "We'll get back to you as quickly as we can when the next available trainer becomes available. You'll receive a discount on any future business because we appreciate you (and your patience). Thanks! \n\n -textbod team" // plaintext body
-    }, function(error, response){
-       if(error){
-           console.log(error);
-       }else{
-           console.log("Customer email sent: " + response.message);
        }
     });
     res.render('pages/congrats');
