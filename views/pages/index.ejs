@@ -22,10 +22,14 @@
             <form class="form-inline trip-query" role="form" id="subscribeForm" method="POST" action="/signup">
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
-                        <label class="trip-label" for="phone" style="display:none">textbod phone #</label>
-                        <input id="phone" class="input-lg" name="phone" type="tel" pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" placeholder="(555)-555-5555" value="" >
-                        <label class="trip-label" for="getgoing" style="display:none">Try textbod</label>
-                        <button class="btn btn-success btn-lg form-control" type="submit">Sign Up</button>
+                        <div class="col-sm-4 col-sm-offset-2">
+                            <label class="trip-label" for="phone" style="display:none">textbod phone #</label>
+                            <input id="phone" class="input-lg" name="phone" type="tel" pattern="(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}" placeholder="(555)-555-5555" value="" required="true">
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="trip-label" for="getgoing" style="display:none">Try textbod</label>
+                            <button class="btn btn-success btn-lg form-control btn-signup" type="submit">Free 1-month trial</button>
+                        </div>
                     </div>
                 </div>
             </form>
@@ -62,8 +66,26 @@
             <h2>Stop reading about achieving goals...</h2>
             <h4>and start getting things done. Textbod is a friend - to keep you honest, disciplined, and fit!</h4>
         </div>
+
+        <section class="row features text-example">
+            <table>
+                <tr class="col-md-10 col-md-offset-1">
+                    <td class="col-md-2 col-md-offset-3"><h3>Friendly.<br><br>Personable.<br><br>Thoughtful.</h3></td>
+                    <td class="col-md-2 col-md-offset-2"><img src="images/textbodtext1.gif" alt="textbod.com text"></td>
+                </tr>
+            </table>
+        </section>
+
+        <section class="row features text-example">
+            <table>
+                <tr class="col-md-10 col-md-offset-1">
+                    <td class="col-md-2 col-md-offset-3"><img src="images/textbodtext2.gif" alt="textbod.com text"></td>
+                    <td class="col-md-2 col-md-offset-2"><h3>Simple.<br><br>Efficient.<br><br>Effective.</h3></td>
+                </tr>
+            </table>
+        </section>
         
-        <section class="row features">
+        <section class="row features feature-list">
             <div class="col-sm-6 col-md-3">
                 <div class="thumbnail"> 
                     <img src="images/service_01.png" alt="analytics-icon">
@@ -129,7 +151,7 @@
                     <div class="pricing color2">
                         <div class="planname">Monthly</div>
                         <div class="price"> <span class="curr">$</span>5<span class="per"></span>/month</div>
-                        <div class="billing">Let's see some results</div>
+                        <div class="billing">See big results</div>
                     </div><! --/pricing -->
                 </div><! --/col-md-4-->
                 
@@ -137,7 +159,7 @@
                     <div class="pricing color3">
                         <div class="planname">Annual</div>
                         <div class="price"> <span class="curr">$</span>50<span class="per"></span>/year</div>
-                        <div class="billing">Make the commitment to health</div>
+                        <div class="billing">Make the commitment</div>
                     </div><! --/pricing -->
                 </div><! --/col-md-4-->
             </section><!-- /section planpricing -->
@@ -155,7 +177,7 @@
                 <h6>How do I know it works?</h6>
                 <p>Give it a try. We're sure it will be the most no-nonsense, result driven, and refreshingly comfortable experience that you'll stick around for months to come.</p>
                 <h6>Do you stop at workouts?</h6>
-                <p>Nope. We try to provide as holistic of a service as possible. We'll give you occasional eating tips.</p>
+                <p>Nope. We try to provide as holistic of a service as possible. We'll give you occasional eating tips, supplement ideas, wellness recommendations, and whatever else we can do to help you reach goals.</p>
             </div><! --/col-md-6 -->
             
             <div class="col-md-6">
@@ -173,7 +195,8 @@
         <div class="container">
             <div class="row">
 
-                <br><h2>The <strong>simple</strong> & <strong>effective</strong> way to <strong>train</strong>.</h2>
+                <br><h2>The <strong>simple</strong> & <strong>effective</strong> way to <strong>train</strong></h2>
+                <h3>Call or text (937)-TEXT-BOD to get started</h3>
                 <div class="col-md-12 breath"> 
                     <a href="#top">
                     <button class="btn btn-success btn-lg">

@@ -100,7 +100,7 @@ a:hover,a:focus{color:#5173bd;}
 }
 
 .btn-lg,.btn-group-lg>.btn{
-  padding:10px 22px;
+  padding:10px 18px;
   height:50px;
   vertical-align: center;
   }
@@ -109,6 +109,9 @@ a:hover,a:focus{color:#5173bd;}
   height:100%;
   float: bottom;
   display: table-cell;
+}
+.btn-signup{
+  width:;
 }
 .breath{margin:50px auto;}
 
@@ -380,6 +383,35 @@ to {
   -ms-transform:scale(1.05);
   transform:scale(1.05);
   z-index:2;
+}
+
+.text-example {
+  border:0;
+  text-align:center;
+  vertical-align: center;
+  padding: 30px;
+}
+.text-example img {
+  width: 70%;
+  -moz-transition:all 0.6s ease;
+  -webkit-transition:all 0.6s ease;
+  -ms-transition:all 0.6s ease;
+  -o-transition:all 0.6s ease;
+  transition:all 0.6s ease;
+}
+.text-example:hover img {
+  -moz-transform:scale(1.05);
+  -webkit-transform:scale(1.05);
+  -o-transform:scale(1.05);
+  -ms-transform:scale(1.05);
+  transform:scale(1.05);
+  z-index:2;
+}
+.text-example h3{
+  color:#384047;
+  font-size: 25px;}
+.feature-list {
+  padding-top: 40px;
 }
 /*========== 5. TESTIMONIALS ==============*/
 

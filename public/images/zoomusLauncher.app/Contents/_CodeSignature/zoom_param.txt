@@ -1,0 +1,1 @@
+package.name=zoomusInstallerFull.pkg&package.version=latest&package.size=16267k&downloadRoot=https://launcher.zoom.us/client&action=join&browser=chrome&confid=lwknRaJAT2iKSuPv6E2L6w%3D%3D&confno=5124360239&zc=0&mcv=0.92.11227.0929&sta=false
